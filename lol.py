@@ -1,4 +1,5 @@
 print("Witam")
+print("Ten program pozwala wprowadzać liczby i je wyświetlać.")
 while True:
     user_input = input("Podaj liczbę (lub wpisz 'exit' aby zakończyć): ")
     if user_input.lower() == 'exit':
