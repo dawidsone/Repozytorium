@@ -1,4 +1,4 @@
-import re
+
 
 def is_palindrome(text: str) -> bool:
     cleaned = re.sub(r'[^a-zA-Z0-9ąęćłńóśźżĄĘĆŁŃÓŚŹŻ]', '', text.lower())
