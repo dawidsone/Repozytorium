@@ -17,7 +17,7 @@ class Movie:
 @app.get("/movies")
 def get_movies():
     try:
-        with open('movies.csv', encoding='utf-8') as file:
+        with open('plikiCsv/movies.csv', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader) 
             return [Movie(row[0], row[1], row[2]).__dict__ for row in reader if len(row) >= 3]
@@ -28,7 +28,7 @@ def get_movies():
 @app.get("/links")
 def get_links():
     try:
-        with open('links.csv', encoding='utf-8') as file:
+        with open('plikiCsv/links.csv', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader) 
             return [{"movieId": row[0], "imdbId": row[1], "tmdbId": row[2]} for row in reader if len(row) >= 3]
@@ -38,7 +38,7 @@ def get_links():
 @app.get("/ratings")
 def get_ratings():
     try:
-        with open('ratings.csv', encoding='utf-8') as file:
+        with open('plikiCsv/ratings.csv', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader) 
             return [{"userId": row[0], "movieId": row[1], "rating": row[2], "timestamp": row[3]} for row in reader if len(row) >= 4]
@@ -48,7 +48,7 @@ def get_ratings():
 @app.get("/tags")
 def get_tags():
     try:
-        with open('tags.csv', encoding= 'utf-8') as file:
+        with open('plikiCsv/tags.csv', encoding= 'utf-8') as file:
             reader = csv.reader(file)
             next(reader)
             return [{"userId": row[0], "movieId": row[1], "tag": row[2], "timestamp": row[3]} for row in reader if len(row) >= 4]
